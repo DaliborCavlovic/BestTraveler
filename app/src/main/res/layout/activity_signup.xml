@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    tools:context=".MainActivity">
-<!--    android:background="@color/backgroundMainColor"-->
+    android:layout_gravity="center">
 
 
     <TextView
@@ -15,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
-        android:text="@string/WelcomeText"
+        android:text="@string/WelcomeText2"
         android:textSize="35sp"
         android:layout_gravity="center"
         android:layout_marginTop="45dp"
@@ -29,8 +26,8 @@
         android:layout_marginBottom="1dp"
         android:layout_gravity="center"
         android:contentDescription="Best_Travel_Logo"
-        tools:ignore="HardcodedText"
-        tools:srcCompat="@mipmap/ic_launcher_foreground" />
+        android:src="@mipmap/ic_launcher_foreground"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/usernameInput"
@@ -41,41 +38,41 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/UsernameHint"
-        android:autofillHints="password"/>
+        android:autofillHints="Username"/>
 
     <EditText
         android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
         android:ems="10"
         android:hint="@string/PasswordHint"
         android:inputType="textPassword"
-        android:autofillHints="username"/>
+        android:autofillHints="Password"/>
 
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/buttonColor"
-            android:layout_marginTop="50dp"
-            android:text="@string/loginButton"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="154dp"
-            tools:layout_editor_absoluteY="583dp"/>
-
-    <TextView
-        android:id="@+id/signUpText"
+    <EditText
+        android:id="@+id/passwordInputConfirm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/signUpQuestion"
-        android:gravity="center"
-        android:textColor="@color/linkColor"
-        android:layout_marginTop="15dp"
-        android:textSize="20sp"
-        />
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:ems="10"
+        android:hint="@string/PasswordHintConfirm"
+        android:inputType="textPassword"
+        android:autofillHints="Password"/>
 
-</LinearLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/buttonColor"
+        android:layout_marginTop="50dp"
+        android:text="@string/signupButton"
+        android:layout_gravity="center"
+        android:textSize="20sp" />
+
+</GridLayout>
