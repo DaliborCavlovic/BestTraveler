@@ -8,4 +8,15 @@
     <string name="UsernameHint">Username</string>
     <string name="PasswordHint">Password</string>
     <string name="PasswordHintConfirm">Confirm Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="best_traveler">BEST TRAVELER</string>
+    <string name="airline_information">Airline information</string>
+    <string name="risk_information">Risk information</string>
+    <string name="next">next</string>
+    <string name="thanks_message">Thank you for using Best Traveler!</string>
+    <string name="start_from">Start from:</string>
+    <string name="to_destination">To Destination:</string>
+    <string name="start_date">Start Date:</string>
+    <string name="search">Search</string>
 </resources>

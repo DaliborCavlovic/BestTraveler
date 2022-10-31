@@ -20,13 +20,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="237dp"
-        android:layout_height="200dp"
+        android:layout_width="241dp"
+        android:layout_height="131dp"
+        android:layout_gravity="center"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
-        android:layout_gravity="center"
         android:contentDescription="Best_Travel_Logo"
-        android:src="@mipmap/ic_launcher_foreground"
+        android:src="@drawable/besttravel"
         tools:ignore="HardcodedText" />
 
     <EditText
