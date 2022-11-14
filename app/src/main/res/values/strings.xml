@@ -20,5 +20,11 @@
     <string name="start_date">Start Date:</string>
     <string name="search">Search</string>
 
+    <string name="submitButtonText">Submit Review</string>
+    <string name="reviewPageTitle">Create A Review</string>
+    <string name="startLocationTitle">Starting Location:</string>
+    <string name="endLocationTitle">End Location:</string>
+    <string name="dateTitle">Date:</string>
     <string name="EmailHint">Email</string>
+    <string name="reviewButtonText">Create a Review</string>
 </resources>

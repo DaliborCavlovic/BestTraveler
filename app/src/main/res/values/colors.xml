@@ -11,4 +11,5 @@
     <color name="buttonColor">#FF134611</color>
     <color name="backgroundMainColor">#FF6ABC58</color>
     <color name="pressedHoverColor">#FF96E072</color>
+    <color name="titleText">#277303</color>
 </resources>

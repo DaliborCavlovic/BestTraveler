@@ -37,10 +37,10 @@
         android:src="@drawable/besttravel" />
 
     <EditText
-        android:id="@+id/textView2"
+        android:id="@+id/startLocation"
         android:layout_width="262dp"
         android:layout_height="60dp"
-        android:text="@string/start_from"
+        android:hint="@string/start_from"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:inputType="text"/>
 
     <EditText
-        android:id="@+id/textView3"
+        android:id="@+id/ednLocation"
         android:layout_width="269dp"
         android:layout_height="62dp"
         android:text="@string/to_destination"
@@ -59,36 +59,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/startLocation"
         app:layout_constraintVertical_bias="0.112"
         android:autofillHints=""
         tools:ignore="LabelFor"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/textView4"
+        android:id="@+id/travelDate"
         android:layout_width="266dp"
         android:layout_height="64dp"
+        android:autofillHints="Date"
+        android:inputType="date"
         android:text="@string/start_date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/ednLocation"
         app:layout_constraintVertical_bias="0.137"
-        android:autofillHints="Date"
-        tools:ignore="LabelFor"
-        android:inputType="date" />
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/searchbutton"
         android:layout_width="249dp"
-        android:layout_height="45dp"
+        android:layout_height="59dp"
         android:backgroundTint="@color/buttonColor"
         android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.413" />
+        app:layout_constraintTop_toBottomOf="@+id/travelDate"
+        app:layout_constraintVertical_bias="0.236" />
+
+    <Button
+        android:id="@+id/reviewButton"
+        android:layout_width="249dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="@string/reviewButtonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchbutton"
+        app:layout_constraintVertical_bias="0.604" />
 </androidx.constraintlayout.widget.ConstraintLayout>

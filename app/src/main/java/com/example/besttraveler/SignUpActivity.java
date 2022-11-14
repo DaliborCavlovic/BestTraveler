@@ -10,14 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -64,17 +58,16 @@ public class SignUpActivity extends AppCompatActivity {
 
         String id = databaseReference.push().getKey();
 
-        // create a task to set the value of the node as the new user
-        Task setValueTask = databaseReference.child("Users").child(id).setValue(user);
+        if (id != null) {
+            Task<Void> setValueTask = databaseReference.child("Users").child(id).setValue(user);
 
-        // add a success listener to the task
-        setValueTask.addOnSuccessListener(o -> {
-            Toast.makeText(SignUpActivity.this, "Account created", Toast.LENGTH_LONG).show();
-            userInput.setText("");
-            passwordInput.setText("");
-            passwordInputConfirm.setText("");
-        });
-
+            setValueTask.addOnSuccessListener(o -> {
+                Toast.makeText(SignUpActivity.this, "Account created", Toast.LENGTH_LONG).show();
+                userInput.setText("");
+                passwordInput.setText("");
+                passwordInputConfirm.setText("");
+            });
+        }
     }
 
     public boolean isValid(String email, String password) {
