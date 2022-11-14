@@ -20,6 +20,7 @@
     <string name="start_date">Start Date:</string>
     <string name="search">Search</string>
 
+    <string name="indexPageTitle">See Information About Your Trip!</string>
     <string name="submitButtonText">Submit Review</string>
     <string name="reviewPageTitle">Create A Review</string>
     <string name="startLocationTitle">Starting Location:</string>
