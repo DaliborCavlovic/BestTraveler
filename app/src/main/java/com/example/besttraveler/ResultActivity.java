@@ -20,7 +20,7 @@ public class ResultActivity extends AppCompatActivity {
         Fragment risk = new riskFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-       fragmentTransaction.replace(R.id.fragmentContainerView, airline);
+        fragmentTransaction.replace(R.id.fragmentContainerView, airline);
         fragmentTransaction.commit();
 
 

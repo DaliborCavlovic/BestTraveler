@@ -16,7 +16,6 @@ public class IndexActivity extends AppCompatActivity {
         Button Search = findViewById(R.id.searchbutton);
         Search.setOnClickListener(view -> {
             Intent intent = new Intent(this, ResultActivity.class);
-
             startActivity(intent);
         });
     }

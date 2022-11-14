@@ -36,8 +36,8 @@
         android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/UsernameHint"
+        android:inputType="textEmailAddress"
+        android:hint="@string/EmailHint"
         android:autofillHints="Username"/>
 
     <EditText
@@ -66,7 +66,7 @@
 
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/signupButton"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/buttonColor"
