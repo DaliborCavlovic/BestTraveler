@@ -39,7 +39,7 @@
         android:layout_marginStart="30dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/UsernameHint"
+        android:hint="@string/EmailHint"
         android:autofillHints="username"/>
 
     <EditText
