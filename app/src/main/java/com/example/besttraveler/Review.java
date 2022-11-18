@@ -1,15 +1,15 @@
 package com.example.besttraveler;
 
 public class Review {
-    private String startLocation, endLocation, date;
+    private String startLocation, date, review;
 
     public Review() {
 
     }
 
-    public Review(String startLocation, String endLocation, String date) {
+    public Review(String startLocation, String review, String date) {
         this.startLocation = startLocation;
-        this.endLocation = endLocation;
+        this.review = review;
         this.date = date;
     }
 
@@ -21,12 +21,12 @@ public class Review {
         this.startLocation = startLocation;
     }
 
-    public String getEndLocation() {
-        return endLocation;
+    public String getReview() {
+        return review;
     }
 
-    public void setEndLocation(String endLocation) {
-        this.endLocation = endLocation;
+    public void setReview(String review) {
+        this.review = review;
     }
 
     public String getDate() {
@@ -36,4 +36,5 @@ public class Review {
     public void setDate(String date) {
         this.date = date;
     }
+
 }

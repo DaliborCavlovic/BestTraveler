@@ -5,10 +5,11 @@
     <string name="signUpQuestion">Don\'t have an account? Sign up here!</string>
     <string name="WelcomeText">Welcome, Please login!</string>
     <string name="WelcomeText2">Create Your Account</string>
-    <string name="UsernameHint">Username</string>
+    <string name="EmailHint">Email:</string>
     <string name="PasswordHint">Password</string>
     <string name="PasswordHintConfirm">Confirm Password</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="best_traveler">BEST TRAVELER</string>
     <string name="airline_information">Airline information</string>
@@ -20,12 +21,15 @@
     <string name="start_date">Start Date:</string>
     <string name="search">Search</string>
 
+
+    <string name="reviewInputTitle">Your Review:</string>
+    <string name="reviewHint">Review:</string>
     <string name="indexPageTitle">See Information About Your Trip!</string>
     <string name="submitButtonText">Submit Review</string>
     <string name="reviewPageTitle">Create A Review</string>
     <string name="startLocationTitle">Starting Location:</string>
+    <string name="startLocationInputTitle">Location:</string>
     <string name="endLocationTitle">End Location:</string>
     <string name="dateTitle">Date:</string>
-    <string name="EmailHint">Email</string>
     <string name="reviewButtonText">Create a Review</string>
 </resources>

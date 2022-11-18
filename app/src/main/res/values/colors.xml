@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="linkColor">#FF3E8914</color>
     <color name="buttonColor">#FF134611</color>
-    <color name="backgroundMainColor">#FF6ABC58</color>
+    <color name="backgroundMainColor">#7FD86D</color>
     <color name="pressedHoverColor">#FF96E072</color>
     <color name="titleText">#277303</color>
 </resources>

@@ -13,12 +13,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class reviewActivity extends AppCompatActivity {
 
-    Bundle reviewInfo;
-    EditText startLocation, endLocation, date;
+    EditText startLocation, reviewEdit, date;
     Button submitButton;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    String beginPlace, endPlace, dateDone;
+    String beginPlace, reviewSentence, dateDone;
 
 
     @Override
@@ -32,14 +31,14 @@ public class reviewActivity extends AppCompatActivity {
         submitButton = findViewById(R.id.reviewSubmit);
 
         startLocation = findViewById(R.id.startLocationReview);
-        endLocation = findViewById(R.id.endLocationReview);
+        reviewEdit = findViewById(R.id.reviewEditText);
         date = findViewById(R.id.travelDateReview);
 
         submitButton.setOnClickListener(View -> {
             beginPlace = startLocation.getText().toString();
-            endPlace = endLocation.getText().toString();
+            reviewSentence = reviewEdit.getText().toString();
             dateDone = date.getText().toString();
-            Review review = new Review(beginPlace, endPlace, dateDone);
+            Review review = new Review(beginPlace, reviewSentence, dateDone);
 
             if (checkFields()) {
                 sendData(review);
@@ -53,9 +52,9 @@ public class reviewActivity extends AppCompatActivity {
         if (id != null) {
             Task<Void> task = databaseReference.child("Reviews").child(id).setValue(review);
             task.addOnSuccessListener(o -> {
-                Toast.makeText(reviewActivity.this, "Account created", Toast.LENGTH_LONG).show();
+                Toast.makeText(reviewActivity.this, "Review Submitted, Thank you!", Toast.LENGTH_LONG).show();
                 startLocation.setText("");
-                endLocation.setText("");
+                reviewEdit.getEditableText().clear();
                 date.setText("");
             });
         }
@@ -64,7 +63,7 @@ public class reviewActivity extends AppCompatActivity {
     }
 
     public boolean checkFields() {
-        if (startLocation.getText().toString().trim().isEmpty() || endLocation.getText().toString().trim().isEmpty()
+        if (startLocation.getText().toString().trim().isEmpty() || reviewEdit.getText().toString().trim().isEmpty()
         || date.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Some fields are empty", Toast.LENGTH_SHORT).show();
             return false;
