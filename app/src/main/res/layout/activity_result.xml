@@ -54,7 +54,7 @@
         android:layout_height="65dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="136dp"
-        android:text="@string/risk_information"
+        android:text="@string/weather_information"
         android:backgroundTint="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

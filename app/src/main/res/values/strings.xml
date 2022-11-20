@@ -32,4 +32,5 @@
     <string name="endLocationTitle">End Location:</string>
     <string name="dateTitle">Date:</string>
     <string name="reviewButtonText">Create a Review</string>
+    <string name="weather_information">Weather Information</string>
 </resources>
