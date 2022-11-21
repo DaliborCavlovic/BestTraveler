@@ -34,7 +34,11 @@ public class fragment_reviewGallery extends Fragment {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
-        DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users");
+        reviews = new ArrayList<>();
+        users = new ArrayList<>();
+        locations = new ArrayList<>();
+
+        DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("Reviews");
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -58,6 +62,10 @@ public class fragment_reviewGallery extends Fragment {
             users.add((String) singleUser.get("user"));
             reviews.add((String) singleUser.get("review"));
             locations.add((String) singleUser.get("startLocation"));
+
+            Log.d("PB_USER", "processDB: " + (String) singleUser.get("user"));
+            Log.d("PB_REVIEW", "processDB: " + (String) singleUser.get("review"));
+            Log.d("PB_START_LOCATION", "processDB: " + (String) singleUser.get("startLocation"));
         }
     }
 
