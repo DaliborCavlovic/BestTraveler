@@ -12,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class IndexActivity extends AppCompatActivity {
 
-    Button Search, Review;
+    Button Search, Review, allReviews;
     EditText startLocation, endLocation, date,Departure,Arrive;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class IndexActivity extends AppCompatActivity {
         Departure=findViewById(R.id.departure);
         Arrive=findViewById(R.id.arrive);
 
+        allReviews = findViewById(R.id.othersReviews);
 
         Review.setOnClickListener(View -> {
             Intent reviewIntent = new Intent(this, reviewActivity.class);
@@ -47,6 +48,11 @@ public class IndexActivity extends AppCompatActivity {
             intent.putExtra("arr", arrive);
 
 
+            startActivity(intent);
+        });
+
+        allReviews.setOnClickListener(view -> {
+            Intent intent = new Intent(this, allReviewsActivity.class);
             startActivity(intent);
         });
     }

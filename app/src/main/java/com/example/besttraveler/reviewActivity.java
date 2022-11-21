@@ -13,11 +13,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class reviewActivity extends AppCompatActivity {
 
-    EditText startLocation, reviewEdit, date;
+    EditText startLocation, reviewEdit, date, usersNameInput;
     Button submitButton;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    String beginPlace, reviewSentence, dateDone;
+    String beginPlace, reviewSentence, dateDone, userName;
 
 
     @Override
@@ -33,12 +33,14 @@ public class reviewActivity extends AppCompatActivity {
         startLocation = findViewById(R.id.startLocationReview);
         reviewEdit = findViewById(R.id.reviewEditText);
         date = findViewById(R.id.travelDateReview);
+        usersNameInput = findViewById(R.id.yourNameEdit);
 
         submitButton.setOnClickListener(View -> {
             beginPlace = startLocation.getText().toString();
             reviewSentence = reviewEdit.getText().toString();
             dateDone = date.getText().toString();
-            Review review = new Review(beginPlace, reviewSentence, dateDone);
+            userName = usersNameInput.getText().toString();
+            Review review = new Review(beginPlace, reviewSentence, dateDone, userName);
 
             if (checkFields()) {
                 sendData(review);
@@ -56,6 +58,7 @@ public class reviewActivity extends AppCompatActivity {
                 startLocation.setText("");
                 reviewEdit.getEditableText().clear();
                 date.setText("");
+                usersNameInput.setText("");
             });
         }
 
@@ -64,7 +67,7 @@ public class reviewActivity extends AppCompatActivity {
 
     public boolean checkFields() {
         if (startLocation.getText().toString().trim().isEmpty() || reviewEdit.getText().toString().trim().isEmpty()
-        || date.getText().toString().trim().isEmpty()) {
+        || date.getText().toString().trim().isEmpty() || usersNameInput.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Some fields are empty", Toast.LENGTH_SHORT).show();
             return false;
         }

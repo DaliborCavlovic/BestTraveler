@@ -25,13 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:gravity="center">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:text="@string/startLocationInputTitle"
             android:textSize="30sp"
@@ -42,7 +41,7 @@
             android:id="@+id/startLocationReview"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/start_from"
@@ -56,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="@string/dateTitle"
             android:textSize="30sp"
             android:textColor="@color/titleText">
@@ -66,7 +65,7 @@
             android:id="@+id/travelDateReview"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/start_date"
@@ -78,7 +77,7 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,7 +87,7 @@
 
         <EditText
             android:id="@+id/reviewEditText"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:ems="10"
@@ -96,6 +95,26 @@
             android:gravity="start|top"
             android:inputType="textMultiLine"
             android:hint="@string/reviewHint"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/yourNameText"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/titleText"
+            android:text="@string/userNameText" />
+
+        <EditText
+            android:id="@+id/yourNameEdit"
+            android:layout_marginTop="5dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/userNameText"
             android:autofillHints="" />
 
     </LinearLayout>

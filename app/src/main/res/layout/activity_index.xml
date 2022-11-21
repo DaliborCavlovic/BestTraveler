@@ -122,6 +122,19 @@
         app:layout_constraintTop_toBottomOf="@+id/travelDate"
         app:layout_constraintVertical_bias="0.096" />
 
+    <Button
+        android:id="@+id/othersReviews"
+        android:layout_width="249dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="@string/otherReviews"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviewButton">
+
+    </Button>
+
     <EditText
         android:id="@+id/departure"
         android:layout_width="268dp"

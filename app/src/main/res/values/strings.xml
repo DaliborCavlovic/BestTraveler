@@ -8,6 +8,7 @@
     <string name="EmailHint">Email:</string>
     <string name="PasswordHint">Password</string>
     <string name="PasswordHintConfirm">Confirm Password</string>
+    <string name="otherReviews">View Others\' Reviews</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -33,4 +34,8 @@
     <string name="dateTitle">Date:</string>
     <string name="reviewButtonText">Create a Review</string>
     <string name="weather_information">Weather Information</string>
+    <string name="title2">username</string>
+    <string name="userNameText">user email</string>
+    <string name="reviewText">users\' review</string>
+    <string name="locationFromUser">users visited area</string>
 </resources>

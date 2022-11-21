@@ -1,0 +1,60 @@
+package com.example.besttraveler;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
+public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
+
+    Context c;
+    ArrayList<String> userNames;
+    ArrayList<String> locations;
+    ArrayList<String> reviews;
+
+    public MyRecyclerViewAdapter(Context c, ArrayList<String> users, ArrayList<String> userLocations, ArrayList<String> userReviews) {
+        this.c = c;
+        userNames = users;
+        locations = userLocations;
+        reviews = userReviews;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(c);
+        View view = inflater.inflate(R.layout.result_item, parent, false);
+        return new MyViewHolder((view));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.userName.setText(userNames.get(position));
+        holder.locationVisited.setText(locations.get(position));
+        holder.reviewByUser.setText(reviews.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return userNames.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView userName, locationVisited, reviewByUser;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            userName = itemView.findViewById(R.id.userName);
+            locationVisited = itemView.findViewById(R.id.locationVisited);
+            reviewByUser = itemView.findViewById(R.id.actualReview);
+        }
+    }
+}

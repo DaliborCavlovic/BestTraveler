@@ -1,16 +1,17 @@
 package com.example.besttraveler;
 
 public class Review {
-    private String startLocation, date, review;
+    private String startLocation, date, review, user;
 
     public Review() {
 
     }
 
-    public Review(String startLocation, String review, String date) {
+    public Review(String startLocation, String review, String date, String user) {
         this.startLocation = startLocation;
         this.review = review;
         this.date = date;
+        this.user = user;
     }
 
     public String getStartLocation() {
@@ -37,4 +38,11 @@ public class Review {
         this.date = date;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 }
