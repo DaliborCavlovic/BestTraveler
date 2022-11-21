@@ -11,23 +11,23 @@
         android:id="@+id/linearLayoutIndex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/backgroundMainColor"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="@color/backgroundMainColor">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="247dp"
-            android:textColor="@color/titleText"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/best_traveler"
             android:textAlignment="center"
+            android:textColor="@color/titleText"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,62 +51,50 @@
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/indexPageTitle"
-        android:gravity="center"
-        android:textColor="@color/titleText"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/startLocation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutIndex">
-
-    </TextView>
-
 
     <EditText
         android:id="@+id/ednLocation"
-        android:layout_width="269dp"
-        android:layout_height="62dp"
+        android:layout_width="274dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="352dp"
         android:autofillHints=""
         android:hint="@string/to_destination"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startLocation"
-        app:layout_constraintVertical_bias="0.128"
+        app:layout_constraintTop_toBottomOf="@+id/departure"
+        app:layout_constraintVertical_bias="0.292"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/startLocation"
         android:layout_width="269dp"
         android:layout_height="60dp"
+        android:layout_marginTop="108dp"
         android:autofillHints=""
         android:hint="@string/start_from"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayoutIndex"
-        app:layout_constraintVertical_bias="0.307"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/travelDate"
-        android:layout_width="269dp"
-        android:layout_height="64dp"
+        android:layout_width="268dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="204dp"
         android:autofillHints="Date"
         android:hint="@string/start_date"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ednLocation"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintTop_toBottomOf="@+id/arrive"
+        app:layout_constraintVertical_bias="0.485"
         tools:ignore="LabelFor" />
 
     <Button
@@ -118,10 +106,9 @@
         android:text="@string/reviewButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchbutton"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.176" />
 
     <Button
         android:id="@+id/searchbutton"
@@ -131,9 +118,32 @@
         android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/travelDate"
-        app:layout_constraintVertical_bias="0.356" />
+        app:layout_constraintVertical_bias="0.096" />
+
+    <EditText
+        android:id="@+id/departure"
+        android:layout_width="268dp"
+        android:layout_height="49dp"
+        android:hint="Departure IATA:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startLocation"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <EditText
+        android:id="@+id/arrive"
+        android:layout_width="279dp"
+        android:layout_height="47dp"
+        android:hint="Arrive IATA:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ednLocation"
+        app:layout_constraintVertical_bias="0.07" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

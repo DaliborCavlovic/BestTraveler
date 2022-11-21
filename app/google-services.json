@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "534865541218",
+    "firebase_url": "https://besttraveler-625e2-default-rtdb.firebaseio.com",
+    "project_id": "besttraveler-625e2",
+    "storage_bucket": "besttraveler-625e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534865541218:android:7d53f1605664131717f93b",
+        "android_client_info": {
+          "package_name": "com.example.besttraveler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534865541218-2gom5rsg14q2375g610kli10l45bf9ho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrhG83mMhuQx2AwUVHU4M4DsA_6l9HNEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534865541218-2gom5rsg14q2375g610kli10l45bf9ho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

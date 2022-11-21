@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.107" />
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/next1"
         android:layout_width="266dp"
         android:layout_height="74dp"
         android:backgroundTint="@color/buttonColor"

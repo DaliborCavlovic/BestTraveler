@@ -25,11 +25,13 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 
 public class ResultActivity extends AppCompatActivity {
-    String result;
+    String result="",result1="";
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
     private final String appid = "fa211ad253385ab5e5f303af6dfebb44";
+    private final String url1 = "https://airlabs.co/api/v9/schedules";
+    private final String api_key = "73d36113-08e5-48d7-add3-8b4a6b8a4522";
     DecimalFormat df = new DecimalFormat("#.##");
-
+    String start1,destination1,date1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +40,12 @@ public class ResultActivity extends AppCompatActivity {
         String start = intent.getStringExtra("start");
         String destination = intent.getStringExtra("destination");
         String date = intent.getStringExtra("date");
-
-
-
-        Fragment airline = new airlineFragment();
+        String departure1=intent.getStringExtra("Dep");
+        String arrive1=intent.getStringExtra("arr");
+        start1=start;
+        destination1=destination;
+        date1=date;
+        result1="Flights from "+start+"To " +destination+" on "+date +"are as follows: \n";
 
         Fragment blank=new BlankFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -50,9 +54,7 @@ public class ResultActivity extends AppCompatActivity {
         fragmentTransaction.commit();
         Button airlinebutton = findViewById(R.id.airlinebutton);
         Button riskbutton = findViewById(R.id.riskbutton);
-
         riskbutton.setOnClickListener(view -> {
-
             String tempUrl = "";
             String cityName = destination.trim();
             if (cityName.equals("")) {
@@ -60,42 +62,78 @@ public class ResultActivity extends AppCompatActivity {
             } else {
                 tempUrl = url + "?q=" +cityName+ "&appid=" + appid;
             }
- //           Toast.makeText(ResultActivity.this, tempUrl, Toast.LENGTH_LONG).show();
-
             AsyncTaskRunner runner = new AsyncTaskRunner();
             runner.execute(tempUrl);
-
             Fragment risk = new riskFragment();
             Bundle bundle = new Bundle();
             bundle.putString("result", result);
-
             risk.setArguments(bundle);
             FragmentManager fragmentManager1 = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
             fragmentTransaction1.replace(R.id.fragmentContainerView, risk);
             fragmentTransaction1.commit();
-
-
         });
-
-
 
         airlinebutton.setOnClickListener(view -> {
-            FragmentTransaction fragmentTransaction1 = fragmentManager.beginTransaction();
-            fragmentTransaction1.replace(R.id.fragmentContainerView, airline);
-            fragmentTransaction1.commit();
+            String tempUrl1 = "";
+            if (departure1.equals("") || arrive1.equals("")) {
+                Toast.makeText(ResultActivity.this, "Departure and arrive fields ars empty!", Toast.LENGTH_SHORT).show();
+            } else {
+                tempUrl1 = url1 + "?dep_iata=" +departure1+ "&arr_iata=" + arrive1+"&api_key="+api_key+"&_fields=flight_number,dep_estimated";
+            }
+  //         Toast.makeText(ResultActivity.this, tempUrl1, Toast.LENGTH_LONG).show();
+            AsyncTaskRunner1 runner1 = new AsyncTaskRunner1();
+            runner1.execute(tempUrl1);
+            Fragment airline = new airlineFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("result1", result1);
+            airline.setArguments(bundle);
+            FragmentManager fragmentManager2 = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+            fragmentTransaction2.replace(R.id.fragmentContainerView, airline);
+            fragmentTransaction2.commit();
         });
 
-
-
-
-        Button next = findViewById(R.id.next);
+        Button next = findViewById(R.id.next1);
         next.setOnClickListener(view -> {
-            Intent intent1 = new Intent(this, lastActivity.class);
-
-            startActivity(intent1);
+           Intent intent2 = new Intent(this, lastActivity.class);
+            startActivity(intent2);
         });
     }
+
+    private class AsyncTaskRunner1 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... strings) {
+            RequestQueue queue1 = Volley.newRequestQueue(ResultActivity.this);
+            JsonObjectRequest request1 = new JsonObjectRequest(Request.Method.GET, strings[0], null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        JSONArray jArr=response.getJSONArray("response");
+                        for(int i=0;i<jArr.length();i++){
+                            JSONObject j1=jArr.getJSONObject(i);
+                            String j2=j1.getString("flight_number");
+                            String j3=j1.getString("dep_estimated");
+                            result1=result1+"flight_number: "+j2+"; "+j3+"\n";
+                            if(i>10)
+                                break;
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(ResultActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
+            queue1.add(request1);
+            result1="Flights from "+start1+" To " +destination1+" on "+date1 +"are as follows: \n";
+            return null;
+        }
+    }
+
     private class AsyncTaskRunner extends AsyncTask<String, Void, String> {
 
         @Override
