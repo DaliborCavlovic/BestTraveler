@@ -110,10 +110,14 @@ public class ResultActivity extends AppCompatActivity {
                 public void onResponse(JSONObject response) {
                     try {
                         JSONArray jArr=response.getJSONArray("response");
+                        String j3="";
                         for(int i=0;i<jArr.length();i++){
                             JSONObject j1=jArr.getJSONObject(i);
                             String j2=j1.getString("flight_number");
-                            String j3=j1.getString("dep_estimated");
+                            try{
+                            j3=j1.getString("dep_estimated");}catch(Exception e) {
+                                j3="";
+                            };
                             result1=result1+"flight_number: "+j2+"; "+j3+"\n";
                             if(i>10)
                                 break;
