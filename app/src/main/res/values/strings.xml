@@ -9,6 +9,7 @@
     <string name="PasswordHint">Password</string>
     <string name="PasswordHintConfirm">Confirm Password</string>
     <string name="otherReviews">View Others\' Reviews</string>
+    <string name="nextButton">NEXT</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -38,4 +39,8 @@
     <string name="userNameText">user email</string>
     <string name="reviewText">users\' review</string>
     <string name="locationFromUser">users visited area</string>
+    <string name="reviewPageText">View Reviews</string>
+    <string name="prevButton">PREV</string>
+    <string name="visited">Visited:</string>
+    <string name="userNameTitle">User:</string>
 </resources>

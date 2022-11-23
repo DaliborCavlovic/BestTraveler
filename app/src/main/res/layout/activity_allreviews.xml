@@ -1,19 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center_horizontal"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/backgroundMainColor"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reviewPageText"
+            android:textSize="50sp"
+            android:textColor="@color/titleText">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="45sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/titleText"
+        android:text="@string/userNameTitle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/nameOfReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:text="@string/userNameText">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45sp"
+            android:textColor="@color/titleText"
+            android:text="@string/visited">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/nameOfVisitedArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:text="@string/locationFromUser">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/contentOfReview"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:text="@string/reviewText">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:textSize="25sp"
+            android:layout_marginEnd="50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/prevButton"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/reviewToggle"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:textSize="25sp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/nextButton"
+            android:textColor="@color/black"/>
+    </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-
     </androidx.fragment.app.FragmentContainerView>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vPager"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
 
 </LinearLayout>
