@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         >
 
@@ -72,7 +72,7 @@
         <TextView
             android:id="@+id/contentOfReview"
             android:layout_width="350dp"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:layout_marginTop="25dp"
@@ -109,12 +109,6 @@
             android:text="@string/nextButton"
             android:textColor="@color/black"/>
     </LinearLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-    </androidx.fragment.app.FragmentContainerView>
 
 
 </LinearLayout>
