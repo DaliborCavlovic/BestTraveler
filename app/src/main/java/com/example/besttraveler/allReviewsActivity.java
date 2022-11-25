@@ -1,5 +1,6 @@
 package com.example.besttraveler;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -53,7 +54,31 @@ public class allReviewsActivity extends AppCompatActivity {
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                processDB((Map<String,Object>) dataSnapshot.getValue());
+                Map<String, Object> usersList = (Map<String, Object>) dataSnapshot.getValue();
+                if (usersList != null) {
+                    processDB(usersList);
+                    name.setText(users.get(counter));
+                    if (name.getText().toString().trim().isEmpty()) {
+                        name.setText(R.string.anonString);
+                    }
+                    location.setText(locations.get(counter));
+                    String userReview = "\"";
+                    userReview += reviews.get(counter);
+                    userReview += "\"";
+                    review.setText(userReview);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        reviewToggle.setOnClickListener(View -> {
+            counter++;
+            if (counter < users.size() && counter < locations.size() && counter < reviews.size()) {
                 name.setText(users.get(counter));
                 if (name.getText().toString().trim().isEmpty()) {
                     name.setText(R.string.anonString);
@@ -63,18 +88,15 @@ public class allReviewsActivity extends AppCompatActivity {
                 userReview += reviews.get(counter);
                 userReview += "\"";
                 review.setText(userReview);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            } else {
+                Toast.makeText(this, "No more reviews", Toast.LENGTH_SHORT).show();
+                counter--;
             }
         });
 
-
-
-            reviewToggle.setOnClickListener(View -> {
-                counter++;
+        previousReview.setOnClickListener(View -> {
+            if (counter > 0) {
+                counter--;
                 if (counter < users.size() && counter < locations.size() && counter < reviews.size()) {
                     name.setText(users.get(counter));
                     if (name.getText().toString().trim().isEmpty()) {
@@ -87,45 +109,26 @@ public class allReviewsActivity extends AppCompatActivity {
                     review.setText(userReview);
                 } else {
                     Toast.makeText(this, "No more reviews", Toast.LENGTH_SHORT).show();
-                    counter--;
                 }
-            });
-
-            previousReview.setOnClickListener(View -> {
-                if (counter > 0) {
-                    counter--;
-                    if (counter < users.size() && counter < locations.size() && counter < reviews.size()) {
-                        name.setText(users.get(counter));
-                        if (name.getText().toString().trim().isEmpty()) {
-                            name.setText(R.string.anonString);
-                        }
-                        location.setText(locations.get(counter));
-                        String userReview = "\"";
-                        userReview += reviews.get(counter);
-                        userReview += "\"";
-                        review.setText(userReview);
-                    } else {
-                        Toast.makeText(this, "No more reviews", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
-
+            }
+        });
 
 
     }
 
-    private void processDB(Map<String,Object> usersList) {
-        for (Map.Entry<String, Object> entry : usersList.entrySet()){
+    private void processDB(Map<String, Object> usersList) {
+            for (Map.Entry<String, Object> entry : usersList.entrySet()) {
 
-            //Get user map
-            Map singleUser = (Map) entry.getValue();
-            //Get phone field and append to list
-            users.add((String) singleUser.get("user"));
-            reviews.add((String) singleUser.get("review"));
-            locations.add((String) singleUser.get("startLocation"));
+                //Get user map
+                Map singleUser = (Map) entry.getValue();
+                //Get phone field and append to list
+                users.add((String) singleUser.get("user"));
+                reviews.add((String) singleUser.get("review"));
+                locations.add((String) singleUser.get("startLocation"));
 
 
-        }
+            }
+
+
     }
 }
