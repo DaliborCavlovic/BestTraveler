@@ -43,4 +43,5 @@
     <string name="prevButton">PREV</string>
     <string name="visited">Visited:</string>
     <string name="userNameTitle">User:</string>
+    <string name="anonString">Anonymous User</string>
 </resources>

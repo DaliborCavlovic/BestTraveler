@@ -67,7 +67,7 @@ public class reviewActivity extends AppCompatActivity {
 
     public boolean checkFields() {
         if (startLocation.getText().toString().trim().isEmpty() || reviewEdit.getText().toString().trim().isEmpty()
-        || date.getText().toString().trim().isEmpty() || usersNameInput.getText().toString().trim().isEmpty()) {
+        || date.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Some fields are empty", Toast.LENGTH_SHORT).show();
             return false;
         }

@@ -1,11 +1,11 @@
 package com.example.besttraveler;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -52,9 +52,12 @@ public class allReviewsActivity extends AppCompatActivity {
         DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("Reviews");
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 processDB((Map<String,Object>) dataSnapshot.getValue());
                 name.setText(users.get(counter));
+                if (name.getText().toString().trim().isEmpty()) {
+                    name.setText(R.string.anonString);
+                }
                 location.setText(locations.get(counter));
                 String userReview = "\"";
                 userReview += reviews.get(counter);
@@ -63,7 +66,7 @@ public class allReviewsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
@@ -74,6 +77,9 @@ public class allReviewsActivity extends AppCompatActivity {
                 counter++;
                 if (counter < users.size() && counter < locations.size() && counter < reviews.size()) {
                     name.setText(users.get(counter));
+                    if (name.getText().toString().trim().isEmpty()) {
+                        name.setText(R.string.anonString);
+                    }
                     location.setText(locations.get(counter));
                     String userReview = "\"";
                     userReview += reviews.get(counter);
@@ -90,6 +96,9 @@ public class allReviewsActivity extends AppCompatActivity {
                     counter--;
                     if (counter < users.size() && counter < locations.size() && counter < reviews.size()) {
                         name.setText(users.get(counter));
+                        if (name.getText().toString().trim().isEmpty()) {
+                            name.setText(R.string.anonString);
+                        }
                         location.setText(locations.get(counter));
                         String userReview = "\"";
                         userReview += reviews.get(counter);
@@ -116,18 +125,7 @@ public class allReviewsActivity extends AppCompatActivity {
             reviews.add((String) singleUser.get("review"));
             locations.add((String) singleUser.get("startLocation"));
 
-            Log.d("PB_USER", "processDB: " + users.get(0));
-            Log.d("PB_REVIEW", "processDB: " + reviews.get(0));
-            Log.d("PB_START_LOCATION", "processDB: " + locations.get(0));
+
         }
     }
-
-
-
-//    @Override
-//    public void onPostCreate(Bundle SavedInstanceData) {
-//        super.onPostCreate(SavedInstanceData);
-//
-//    }
-
 }
