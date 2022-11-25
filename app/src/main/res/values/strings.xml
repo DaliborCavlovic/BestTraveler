@@ -44,4 +44,6 @@
     <string name="visited">Visited:</string>
     <string name="userNameTitle">User:</string>
     <string name="anonString">Anonymous User</string>
+    <string name="yourNameText">Your name (Optional)</string>
+    <string name="usersNameRequest">Name</string>
 </resources>
