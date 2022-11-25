@@ -45,7 +45,7 @@ public class ResultActivity extends AppCompatActivity {
         start1=start;
         destination1=destination;
         date1=date;
-        result1="Flights from "+start+"To " +destination+" on "+date +"are as follows: \n";
+        result1="Flights from "+start+" To " +destination+" on "+date +" are as follows: \n";
 
         Fragment blank=new BlankFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -133,7 +133,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
             });
             queue1.add(request1);
-            result1="Flights from "+start1+" To " +destination1+" on "+date1 +"are as follows: \n";
+            result1="Flights from "+start1+" To " +destination1+" on "+date1 +" are as follows: \n";
             return null;
         }
     }

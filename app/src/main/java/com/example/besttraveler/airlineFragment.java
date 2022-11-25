@@ -1,4 +1,5 @@
 package com.example.besttraveler;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,8 @@ public class airlineFragment extends Fragment {
         View myView = inflater.inflate(R.layout.fragment_airline, container, false);
         TextView textView = myView.findViewById(R.id.airline);
         textView.setText(Result);
+        textView.setTextSize(18);
+        textView.setTextColor(Color.BLACK);
         return myView;
     }
 }

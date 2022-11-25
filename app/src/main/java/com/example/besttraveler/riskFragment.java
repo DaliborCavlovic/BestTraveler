@@ -1,6 +1,8 @@
 package com.example.besttraveler;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,9 @@ public class riskFragment extends Fragment {
         View myView = inflater.inflate(R.layout.fragment_risk, container, false);
         TextView textView = myView.findViewById(R.id.risk);
         textView.setText(Result);
+        textView.setTextSize(24);
+        textView.setTextColor(Color.BLACK);
+//      textView.setGravity(Gravity.CENTER);
         return myView;
     }
 
